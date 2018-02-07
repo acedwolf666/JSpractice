@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validation</title>
+  <script>
+    "user strict"
+    function validate(){
+      var code = document.getElementById("nric").value;
+      if (code == ""){
+        document.getElementById("result").innerHTML = "Input can't be blank!";
+      } else if (!isNaN(code)){
+        document.getElementById("result").innerHTML = "Input can't be all numbers";
+      } else if (code.length != 10){
+        document.getElementById("result").innerHTML = "Length of input is not correct!";
+      } else {
+        document.getElementById("result").innerHTML = "Passed the validation!";
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    ID : <br>
+    <input type="text" id="nric">
+    <input type="button" value="validate" onclick="validate()">
+    <p id="result"></p>
+  </form>
+</body>
+</html>
