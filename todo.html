@@ -27,7 +27,10 @@
 
       var removeButton = document.createElement("button");
       removeButton.onclick = function(){
-        this.parentNode.parentNode.removeChild(this.parentNode);
+        var confirmation = confirm("Are you sure?");
+        if(confirmation){
+          this.parentNode.parentNode.removeChild(this.parentNode);
+        }
       }
       span.innerHTML = input;
       todo.appendChild(span);
