@@ -16,7 +16,12 @@
       } else if (code.length != 10){
         document.getElementById("result").innerHTML = "Length of input is not correct!";
       } else {
-        document.getElementById("result").innerHTML = "Passed the validation!";
+        if (code[1] == "1"){
+          document.getElementById("result").innerHTML = "Hello Mister! You've passed the validation.";
+        }
+        else if(code[1] == "2"){
+          document.getElementById("result").innerHTML = "Hello Lady! You've passed the validation.";
+        }
       }
     }
   </script>
