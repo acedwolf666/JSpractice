@@ -11,21 +11,31 @@
       image.src = state? "img/on.jpg" : "img/off.jpg"
     }
 
-    var timeLeft = 5;
+    var timeLeft = 0;
+    var setting =0;
+    function inputCountDown(){
+      var inputTime = document.getElementById("input").value;
+      timeLeft = inputTime;
+      setting = setInterval(countDownTimer, 1000);
+      document.getElementById("input").value = "";
+    }
+
     function countDownTimer(){
       timeLeft = timeLeft - 1;
+      document.getElementById("timer").innerHTML = timeLeft;
       if(timeLeft <= 0){
         document.getElementById("image").src = "img/off.jpg";
-        clearInterval(t);
+        clearInterval(setting);
       }
-      document.getElementById("timer").innerHTML = timeLeft;
     }
-    var t = setInterval(countDownTimer, 1000);
+
   </script>
 </head>
 <body>
-  <img id="image" src="img/on.jpg">
-  <div class="div" id="timer">5</div>
+  <img id="image" src="img/on.jpg"> <br>
+  <input type="text" id="input">
+  <button onclick="inputCountDown()">GO</button>
+  <div class="div" id="timer"> X </div>
   <button class="button" onclick="toggleLight();">ON <br>-<br>OFF</button>
 </body>
 </html>
