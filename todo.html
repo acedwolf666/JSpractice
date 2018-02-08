@@ -29,7 +29,9 @@
       removeButton.onclick = function(){
         var confirmation = confirm("Are you sure?");
         if(confirmation){
-          this.parentNode.parentNode.removeChild(this.parentNode);
+          this.parentNode.firstChild.style.color = "red";
+          this.parentNode.removeChild(replaceButton);
+          this.parentNode.removeChild(this);
         }
       }
       span.innerHTML = input;
